@@ -3,11 +3,17 @@ import {
   InitialConfigType,
   LexicalComposer,
 } from "@lexical/react/LexicalComposer";
-import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
+// import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { CustomHistoryActions, OnChangePlugin } from "./components";
+import {
+  CustomHistoryActions,
+  CustomTextActions,
+  CustomAlignActions,
+  OnChangePlugin,
+} from "./components";
 
 export const App: React.FC = () => {
   const CustomContent = useMemo(() => {
@@ -91,7 +97,7 @@ export const App: React.FC = () => {
   return (
     <div style={{ padding: "20px" }}>
       <LexicalComposer initialConfig={lexicalConfig}>
-        <PlainTextPlugin
+        <RichTextPlugin
           contentEditable={CustomContent}
           placeholder={CustomPlaceholder}
           ErrorBoundary={LexicalErrorBoundary}
@@ -100,6 +106,8 @@ export const App: React.FC = () => {
         <OnChangePlugin />
         <div style={{ margin: "20px 0px" }}>
           <CustomHistoryActions />
+          <CustomTextActions />
+          <CustomAlignActions />
         </div>
       </LexicalComposer>
     </div>
