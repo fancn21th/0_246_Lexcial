@@ -92,6 +92,18 @@ export const App: React.FC = () => {
         version: 1,
       },
     }),
+    theme: {
+      text: {
+        bold: "font-bold text-red-500",
+        italic: "text-italic",
+        underline: "text-underline",
+        code: "text-code",
+        highlight: "text-highlight",
+        strikethrough: "text-strikethrough",
+        subscript: "text-subscript",
+        superscript: "text-superscript",
+      },
+    },
   };
 
   return (
