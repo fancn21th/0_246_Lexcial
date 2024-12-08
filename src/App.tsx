@@ -44,6 +44,48 @@ export const App: React.FC = () => {
     onError: (e) => {
       console.log("ERROR:", e);
     },
+    editorState: JSON.stringify({
+      root: {
+        children: [
+          {
+            children: [
+              {
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "asd",
+                type: "text",
+                version: 1,
+              },
+              {
+                type: "linebreak",
+                version: 1,
+              },
+              {
+                detail: 0,
+                format: 0,
+                mode: "normal",
+                style: "",
+                text: "dsa",
+                type: "text",
+                version: 1,
+              },
+            ],
+            direction: "ltr",
+            format: "",
+            indent: 0,
+            type: "paragraph",
+            version: 1,
+          },
+        ],
+        direction: "ltr",
+        format: "",
+        indent: 0,
+        type: "root",
+        version: 1,
+      },
+    }),
   };
 
   return (
