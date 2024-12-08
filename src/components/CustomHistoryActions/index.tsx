@@ -5,13 +5,19 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 export const CustomHistoryActions = () => {
   const [editor] = useLexicalComposerContext();
   return (
-    <>
-      <button onClick={() => editor.dispatchCommand(UNDO_COMMAND, undefined)}>
+    <div className="flex gap-1">
+      <button
+        onClick={() => editor.dispatchCommand(UNDO_COMMAND, undefined)}
+        className="border border-blue-400 p-2"
+      >
         Undo
       </button>
-      <button onClick={() => editor.dispatchCommand(REDO_COMMAND, undefined)}>
+      <button
+        onClick={() => editor.dispatchCommand(REDO_COMMAND, undefined)}
+        className="border border-blue-400 p-2"
+      >
         Redo
       </button>
-    </>
+    </div>
   );
 };
